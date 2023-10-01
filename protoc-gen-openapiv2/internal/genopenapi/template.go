@@ -2945,12 +2945,12 @@ func updateswaggerObjectFromJSONSchema(s *openapiSchemaObject, j *openapi_option
 func updateSwaggerObjectFromFieldBehavior(s *openapiSchemaObject, j []annotations.FieldBehavior, reg *descriptor.Registry, field *descriptor.Field) {
 	for _, fb := range j {
 		switch fb {
-		case annotations.FieldBehavior_REQUIRED:
-			if reg.GetUseJSONNamesForFields() {
-				s.Required = append(s.Required, *field.JsonName)
-			} else {
-				s.Required = append(s.Required, *field.Name)
-			}
+		// case annotations.FieldBehavior_REQUIRED:
+		// 	if reg.GetUseJSONNamesForFields() {
+		// 		s.Required = append(s.Required, *field.JsonName)
+		// 	} else {
+		// 		s.Required = append(s.Required, *field.Name)
+		// 	}
 		case annotations.FieldBehavior_OUTPUT_ONLY:
 			s.ReadOnly = true
 		case annotations.FieldBehavior_FIELD_BEHAVIOR_UNSPECIFIED:
